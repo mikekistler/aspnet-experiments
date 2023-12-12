@@ -1,0 +1,6 @@
+@SystemTextJson_HostAddress = http://localhost:5270
+
+GET {{SystemTextJson_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
