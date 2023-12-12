@@ -1,9 +1,19 @@
+using Microsoft.AspNetCore.Http.Json;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Update the default JsonOptions to skip serializing nulls and use RFC 3339 format for date-times
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.SerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    options.SerializerOptions.Converters.Add(new DateTimeOffsetJsonConverter());
+    options.SerializerOptions.Converters.Add(new DateTimeJsonConverter());
+});
 
 var app = builder.Build();
 
