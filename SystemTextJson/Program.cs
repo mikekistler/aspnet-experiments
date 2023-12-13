@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http.Json;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,11 +8,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Update the default JsonOptions to skip serializing nulls and use RFC 3339 format for date-times
-builder.Services.Configure<JsonOptions>(options =>
+builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
 {
     options.SerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
     options.SerializerOptions.Converters.Add(new DateTimeOffsetJsonConverter());
     options.SerializerOptions.Converters.Add(new DateTimeJsonConverter());
+    options.SerializerOptions.PropertyNameCaseInsensitive = false;
 });
 
 var app = builder.Build();
@@ -43,7 +44,20 @@ app.MapGet("/test1", () =>
         .ToArray();
     return forecast;
 })
-.WithName("GetWeatherForecast")
+.WithName("test1")
+.WithOpenApi();
+
+
+app.MapPost("/test2", ([FromBody] Test2Request request) =>
+{
+    return new
+    {
+        Name = request.Name,
+        Age = request.Age,
+        City = request.City
+    };
+})
+.WithName("test2")
 .WithOpenApi();
 
 app.Run();
@@ -51,4 +65,11 @@ app.Run();
 internal record WeatherForecast(DateTimeOffset Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+
+internal class Test2Request
+{
+    public string? Name { get; set; }
+    public int? Age { get; set; }
+    public string? City { get; set; }
 }
