@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34327.274
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemTextJson", "SystemTextJson\SystemTextJson.csproj", "{FA696792-C992-4289-B8E5-B4BBACFA697F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalWithValidation", "MinimalWithValidation\MinimalWithValidation.csproj", "{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FA696792-C992-4289-B8E5-B4BBACFA697F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA696792-C992-4289-B8E5-B4BBACFA697F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA696792-C992-4289-B8E5-B4BBACFA697F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
