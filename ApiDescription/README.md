@@ -156,6 +156,30 @@ In controller-based apps, you can use XML comments to add descriptions to the op
 But in a Minimal API app like this one, we need to use the `.WithOpenApi` extension method on the route.
 This approach is described in the [Add Summary and Description] topic of the Minimal API docs on MS Learn.
 
+## Check API Description in CI
+
+Now that we've fixed all the issues that Spectral reported, we want to make sure that we don't introduce
+any new issues in the future. We can do this by adding a step to our CI pipeline that runs the Spectral linter.
+
+```yaml
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Check generated API docs
+      run: |
+        npm install -g @stoplight/spectral-cli
+        spectral lint --fail-severity warn ApiDescription/obj/ApiDescription.json
+```
+
+The `--fail-severity warn` option tells Spectral to fail the build if it finds any errors or warnings.
+
+## Conclusion
+
+In this project, we used the `ApiDescription` package to generate an OpenAPI description for a Minimal API app.
+We used the [OpenAPI (Swagger) Editor] VSCode extension to view the Swagger UI documentation and use the "Try it out" functionality.
+We used the [`Spectral linter`] to check the OpenAPI description for errors and warnings, and we added a CI step to check the description in the build pipeline.
+
 ## References
 
 - [`ApiDescription.Server`]
