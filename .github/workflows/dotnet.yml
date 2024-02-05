@@ -26,3 +26,12 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Check generated API docs
+      run: |
+        npm install -g @stoplight/spectral-cli
+        spectral lint --fail-severity warn ApiDescription/obj/ApiDescription.json

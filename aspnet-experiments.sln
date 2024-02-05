@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemTextJson", "SystemTex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalWithValidation", "MinimalWithValidation\MinimalWithValidation.csproj", "{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDescription", "ApiDescription\ApiDescription.csproj", "{B70DCD90-0462-4EB8-B025-E7BB39F0E4CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{309E0CB8-2528-46C5-A0D3-9D5EFF6FA994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B70DCD90-0462-4EB8-B025-E7BB39F0E4CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B70DCD90-0462-4EB8-B025-E7BB39F0E4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B70DCD90-0462-4EB8-B025-E7BB39F0E4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B70DCD90-0462-4EB8-B025-E7BB39F0E4CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
